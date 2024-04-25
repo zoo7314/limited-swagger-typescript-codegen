@@ -1,0 +1,19 @@
+{{#each extracts}}
+{{> objectSchema this }}
+{{/each}}
+/**
+ * {{description}}
+ * {{summary}}
+ */
+export function {{identifier}}(
+  {{#if parameters.length}}
+  params: {{paramsType}},
+  {{/if}}
+  config?: ClientRequestConfig,
+) {
+  return client.request<any, ApiResObject<{{resType}}>>({
+    {{#each this.requestConfigEntries}}
+    {{> requestConfigEntry this}}
+    {{/each}}
+  })
+}

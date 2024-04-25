@@ -1,0 +1,9 @@
+{{#if entries.length}}
+{{key}}: {
+  {{#each entries}}
+  {{> requestConfigEntry this}}
+  {{/each}}
+},
+{{else}}
+{{key}}{{#if value}}: {{/if}}{{value}},
+{{/if}}

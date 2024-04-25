@@ -1,0 +1,6 @@
+export type {{identifier}} = {
+  {{#each properties}}
+  /** {{this.description}} */
+  {{this.identifier}}{{#unless this.required}}?{{/unless}}: {{this.type}};
+  {{/each}}
+}

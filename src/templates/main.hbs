@@ -1,0 +1,14 @@
+/* eslint-disable */
+{{#if imports.length}}
+{{#each imports}}
+{{> importDecl this}}
+{{/each}}
+
+{{/if}}
+const apiGenerated = {
+  {{#each services}}
+  {{this.name}},
+  {{/each}}
+}
+
+export default apiGenerated
