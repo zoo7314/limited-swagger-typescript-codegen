@@ -4,14 +4,12 @@ import * as objects from './objects'
 import { output } from './output'
 import parse from './parse'
 import { OpenAPIV2 } from 'openapi-types'
+import { GenArgs } from './types'
 
 
-async function gen({
-  input = defaults.oneOf('', defaults.openApiV2Doc()),
-  dest = '',
-  config = objects.genConfig(),
-}): Promise<void> {
+async function gen(config: GenArgs): Promise<void> {
   global.apiGenConfig = config
+  const { input, dest } = config
   let inputFinal = defaults.openApiV2Doc()
   if (typeof input === 'string') {
     inputFinal = await fetchRemoteDocInput(input)

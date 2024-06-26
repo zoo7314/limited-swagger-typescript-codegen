@@ -1,3 +1,4 @@
+import { OpenAPIV2 } from "openapi-types"
 
 export type ResolvedType = {
   typeValue: string
@@ -87,6 +88,15 @@ export type ParseResult = {
 export type GenConfig = {
   clientPath: string
   prefix: string
+}
+
+export type GenArgs = {
+  input: string | OpenAPIV2.Document
+  dest: string
+  clientPath?: string
+  prefix?: string
+  rewriteInputTypeSchema?: (schema: OpenAPIV2.Schema)
+    => OpenAPIV2.Schema | undefined
 }
 
 

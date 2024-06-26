@@ -1,5 +1,5 @@
 import * as defaults from "./defaults"
-import { Api, ApiParameter, GenConfig, ImportDecl, MainFileModel, ObjectSchema, ParseResult, Property, RequestConfigEntry, ResolvedType, SchemaFileModel, ServiceFileModel } from "./types"
+import { Api, ApiParameter, GenArgs, GenConfig, ImportDecl, MainFileModel, ObjectSchema, ParseResult, Property, RequestConfigEntry, ResolvedType, SchemaFileModel, ServiceFileModel } from "./types"
 
 
 export const resolvedType = ({
@@ -152,6 +152,18 @@ export const genConfig = ({
   clientPath = '@/client',
   prefix = '',
 } = {}): GenConfig => ({
+  clientPath,
+  prefix,
+})
+
+export const genArgs = ({
+  input = '',
+  dest = '',
+  clientPath = '@/client',
+  prefix = '',
+} = {}): GenArgs => ({
+  input,
+  dest,
   clientPath,
   prefix,
 })

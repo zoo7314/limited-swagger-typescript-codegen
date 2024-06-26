@@ -4,8 +4,9 @@ import * as objects from './objects'
 import { normalizeIdentifier } from "./normalizeIdentifier"
 import { resolveType } from "./resolveType"
 import { ensureValidObjectKey, uniq } from "./utils"
+import { getSchemaBeforeResolveType } from "./getSchemaBeforeResolveType"
 
-
+global.apiGenConfig = objects.genArgs()
 
 export function getSchemaFileModel({
   defName = '',
@@ -51,7 +52,7 @@ function getProperty({
   objectSchema = objects.objectSchema(),
 }): Property {
   const { required = [] } = defObj
-  const { typeValue, deps } = resolveType(propSchema)
+  const { typeValue, deps } = resolveType(getSchemaBeforeResolveType(propSchema))
   addObjectSchemaDeps(objectSchema, deps)
   return objects.property({
     identifier: ensureValidObjectKey(propName),

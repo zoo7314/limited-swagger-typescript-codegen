@@ -12,6 +12,7 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/test/testGen.js",
+      "postDebugTask": "npm: typecheck"
     },
     {
       "name": "Debug Jest Tests",

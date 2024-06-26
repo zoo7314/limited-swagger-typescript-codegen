@@ -6,7 +6,7 @@ import { camelCase, uniq, upperFirst } from './utils'
 import { OpenAPIV2 } from 'openapi-types'
 import { resolveType } from './resolveType'
 import { getApiParameters } from './getApiParameters'
-import { addApiDeps } from './utils'
+import { addApiDeps } from './addApiDeps'
 import { getApiRequestConfigEntries } from './getApiRequestConfigEntries'
 
 

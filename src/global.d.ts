@@ -1,5 +1,5 @@
-import { GenConfig } from "./types";
+import { GenArgs } from "./types";
 
 declare global {
-  var apiGenConfig: GenConfig
+  var apiGenConfig: GenArgs;
 }

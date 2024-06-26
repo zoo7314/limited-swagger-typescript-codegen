@@ -33,9 +33,6 @@ describe('test typeValues', () => {
         expect(getType(schemaObject({ type: e }))).toBe('string')
       })
   })
-  it('turns big numbers to string', () => {
-    expect(getType(schemaObject({ type: 'integer', format: 'int64' }))).toBe('string')
-  })
   it('recognizes files', () => {
     expect(getType(schemaObject({ type: 'file' }))).toBe('Blob')
   })

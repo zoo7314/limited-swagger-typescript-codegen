@@ -1,5 +1,4 @@
 import { pinyin } from "pinyin-pro"
-import { Api } from "./types"
 
 export const isNullish = (value: any): value is (undefined | null) => value === undefined ||
   value === null
@@ -81,18 +80,6 @@ export const uniq = <T>(array: T[]) => {
 }
 
 
-
-
-export function addApiDeps(api: Api, deps: string[]) {
-  for (const dep of deps) {
-    if (
-      dep &&
-      !api.deps.find(e => e === dep)
-    ) {
-      api.deps.push(dep)
-    }
-  }
-}
 
 export function ensureValidObjectKey(key: string) {
   const regNotValid = /[-/.\[\]]/

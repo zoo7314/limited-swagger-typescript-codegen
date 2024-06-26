@@ -4,7 +4,8 @@ import { Api, ApiParameter } from "./types";
 import { assign, ensureValidObjectKey, regParemterWithAccessPath } from './utils';
 import { OpenAPIV2 } from 'openapi-types';
 import { resolveType } from './resolveType';
-import { addApiDeps } from './utils'
+import { addApiDeps } from './addApiDeps'
+import { getSchemaBeforeResolveType } from './getSchemaBeforeResolveType';
 
 export function getApiParameters({
   api = objects.api({}),
@@ -39,7 +40,9 @@ function getApiParameter({
     assign(apiParam, { type: typeValue, deps })
     addApiDeps(api, deps)
   } else if (isParameterInBodyParameterObject(parameter)) {
-    const { typeValue, deps } = resolveType(parameter.schema)
+    const { typeValue, deps } = resolveType(
+      getSchemaBeforeResolveType(parameter.schema),
+    )
     assign(apiParam, { type: typeValue, deps })
     addApiDeps(api, deps)
   }

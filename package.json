@@ -25,7 +25,7 @@
   ],
   "author": "zoo7314",
   "license": "MIT",
-  "types": "types/index.d.ts",
+  "typings": "types/index.d.ts",
   "files": [
     "bin/index.js",
     "dist/index.js",

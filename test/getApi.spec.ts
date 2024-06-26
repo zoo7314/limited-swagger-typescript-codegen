@@ -1,7 +1,7 @@
 import * as objects from '../src/objects'
 import { getApi } from "../src/getApi"
 
-global.apiGenConfig = objects.genConfig()
+global.apiGenConfig = objects.genArgs()
 
 describe('getApi', () => {
 

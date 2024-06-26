@@ -127,9 +127,6 @@ function caseNumber(
       'integer', 'float', 'number',
       'long', 'double',
     ].includes(type)) {
-      if (format === 'int64') {
-        return 'string'
-      }
       return 'number'
     }
   }

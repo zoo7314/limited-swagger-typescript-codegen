@@ -18,6 +18,14 @@
 				"clear": false,
 				"revealProblems": "onProblem"
 			}
+		},
+		{
+			"type": "npm",
+			"script": "typecheck",
+			"label": "npm: typecheck",
+			"problemMatcher": [
+				"$tsc"
+			]
 		}
 	]
 }

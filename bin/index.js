@@ -3,7 +3,7 @@ const { program } = require('commander');
 const pkg = require('../package.json');
 
 const params = program
-    .name('openapi')
+    .name('limited-swagger-typescript-codegen')
     .usage('[options]')
     .version(pkg.version)
     .requiredOption('-i, --input <value>', 'url used to fetch the json object (required)')
@@ -18,10 +18,8 @@ const gen = require('../dist/index')
 gen({
   input: params.input,
   dest: params.dest,
-  config: {
-    clientPath: params.clientPath,
-    prefix: params.prefix,
-  },
+  clientPath: params.clientPath,
+  prefix: params.prefix,
 })
   .then(() => {
     process.exit(0)

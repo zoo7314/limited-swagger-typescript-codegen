@@ -32,10 +32,8 @@ import gen from 'limited-swagger-typescript-codegen'
 gen({
   input: require('/path/to/json'),
   dest: './generated',
-  config: {
-    clientPath: '@/client',
-    prefix: '/dev-api',
-  },
+  clientPath: '@/client',
+  prefix: '/dev-api',
 })
 ```
 

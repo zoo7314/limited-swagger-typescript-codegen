@@ -4,7 +4,7 @@ import { getApi } from "../src/getApi"
 import { getApiRequestConfigEntries } from "../src/getApiRequestConfigEntries"
 import { RequestConfigEntry } from '../src/types'
 
-global.apiGenConfig = objects.genConfig()
+global.apiGenConfig = objects.genArgs()
 
 const getEntries = ({
   path = '',
