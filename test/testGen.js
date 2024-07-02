@@ -51,8 +51,8 @@ async function main() {
   try {
     // await genCopfAdmin()
     // await genCopfSite()
-    // await genPortal()
-    await genVal()
+    await genPortal()
+    // await genVal()
   } catch (error) {
     console.log(error)
   }

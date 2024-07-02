@@ -16,7 +16,7 @@ export function getSchemaFileModel({
   schemaFileModel.schema = getObjectSchema({ defName, defObj })
   schemaFileModel.imports = uniq(schemaFileModel.schema.deps)
     .map(dep => objects.importDecl({
-      namedExports: [dep],
+      namedExports: [`type ${dep}`],
       module: `./${dep}`,
     }))
   return schemaFileModel

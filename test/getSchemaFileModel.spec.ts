@@ -54,7 +54,7 @@ describe('getSchemaFileModel', () => {
         },
       },
     })
-    expect(r).toEqual(['A', 'B'])
+    expect(r).toEqual(['type A', 'type B'])
   })
 
   it('quotes property odd identifier', () => {

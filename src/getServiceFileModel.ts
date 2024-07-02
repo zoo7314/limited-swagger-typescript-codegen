@@ -15,8 +15,8 @@ export function getServiceFileModel({
   imports.push(objects.importDecl({
     defaultExport: 'client',
     namedExports: [
-      'ClientRequestConfig',
-      'ApiResObject',
+      'type ClientRequestConfig',
+      'type ApiResObject',
       ...ifElement(
         apis.some(e => e.sendFormData),
         'transformParamsToFormData',
@@ -26,7 +26,7 @@ export function getServiceFileModel({
   }))
   imports.push(...uniq(apis.flatMap(e => e.deps))
     .map(e => objects.importDecl({
-      namedExports: [e],
+      namedExports: [`type ${e}`],
       module: `../schemas/${e}`,
     })))
   const service = objects.serviceFileModel({
