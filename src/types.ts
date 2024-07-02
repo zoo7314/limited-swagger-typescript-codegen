@@ -60,6 +60,7 @@ export type RequestConfigEntry = {
 }
 
 export type ServiceFileModel = {
+  tag: string
   name: string
   apis: Api[]
   imports: ImportDecl[]

@@ -1,6 +1,4 @@
-import api from "./api";
-
-
+import { Api } from "./api";
 
 
 

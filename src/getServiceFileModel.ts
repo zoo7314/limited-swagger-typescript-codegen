@@ -30,6 +30,7 @@ export function getServiceFileModel({
       module: `../schemas/${e}`,
     })))
   const service = objects.serviceFileModel({
+    tag: tag.name,
     name,
     apis,
     imports,

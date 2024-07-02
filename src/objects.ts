@@ -118,10 +118,12 @@ export const requestConfigEntry = ({
 
 
 export const serviceFileModel = ({
+  tag = '',
   name = '',
   apis = Array<Api>(0),
   imports = Array<ImportDecl>(0),
 } = {}): ServiceFileModel => ({
+  tag,
   name,
   apis,
   imports,

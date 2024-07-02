@@ -5,10 +5,8 @@
 {{/each}}
 
 {{/if}}
-const apiGenerated = {
-  {{#each services}}
-  {{this.name}},
-  {{/each}}
-}
+{{#each services}}
+/** {{this.tag}} */
+export const {{this.name}}Service = {{this.name}}
+{{/each}}
 
-export default apiGenerated
