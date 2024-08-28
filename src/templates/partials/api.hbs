@@ -2,16 +2,20 @@
 {{> objectSchema this }}
 {{/each}}
 /**
- * {{description}}
+ {{#if summary}}
  * {{summary}}
+ {{/if}}
+ {{#if description}}
+ * {{description}}
+ {{/if}}
  */
 export function {{identifier}}(
   {{#if parameters.length}}
-  params: {{paramsType}},
+  params: {{paramsType.value}},
   {{/if}}
   config?: ClientRequestConfig,
 ) {
-  return client.request<any, ApiResObject<{{resType}}>>({
+  return client.request<ClientApiResponse<{{resType.value}}>>({
     {{#each this.requestConfigEntries}}
     {{> requestConfigEntry this}}
     {{/each}}

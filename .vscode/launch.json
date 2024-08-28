@@ -5,14 +5,29 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "apigen",
       "type": "node",
       "request": "launch",
-      "name": "testGen",
+      "program": "${workspaceFolder}/test-consumer/scripts/apigen.ts",
+      "runtimeExecutable": "tsx",
+      "postDebugTask": "gen-check",
       "skipFiles": [
-        "<node_internals>/**"
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**",
       ],
-      "program": "${workspaceFolder}/test/testGen.js",
-      "postDebugTask": "npm: typecheck"
+    },
+    {
+      "name": "build, apigen",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/test-consumer/scripts/apigen.ts",
+      "runtimeExecutable": "tsx",
+      "preLaunchTask": "build",
+      "postDebugTask": "gen-check",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**",
+      ],
     },
     {
       "name": "Debug Jest Tests",
@@ -20,10 +35,11 @@
       "request": "launch",
       "runtimeArgs": [
         "--inspect-brk",
-        "${workspaceRoot}/node_modules/.bin/jest",
-        "${workspaceFolder}/test/resolveType.spec.ts",
-        // "${workspaceFolder}/test/getApi.spec.ts",
-        // "${workspaceFolder}/test/getApiRequestConfigEntries.spec.ts",
+        "${workspaceFolder}/node_modules/jest/bin/jest.js",
+        // "${workspaceFolder}/src/entities/ResolvedType.spec.ts",
+        // "${workspaceFolder}/src/v2/resolveType.spec.ts",
+        // "${workspaceFolder}/src/v2/getSchemaOutputModel.spec.ts",
+        "${workspaceFolder}/src/v2/getApiRequestConfigEntries.spec.ts",
         "--runInBand"
       ],
       "console": "integratedTerminal",

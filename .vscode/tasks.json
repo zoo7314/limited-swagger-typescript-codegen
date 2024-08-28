@@ -4,14 +4,16 @@
 		{
 			"type": "npm",
 			"script": "build",
-			"group": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
 			"problemMatcher": [],
-			"label": "npm: build",
-			"detail": "rollup --config",
+			"label": "build",
+			"detail": "rollup build",
 			"presentation": {
-				"close": true,
 				"echo": true,
-				"reveal": "never",
+				"reveal": "silent",
 				"focus": false,
 				"panel": "shared",
 				"showReuseMessage": true,
@@ -21,11 +23,22 @@
 		},
 		{
 			"type": "npm",
-			"script": "typecheck",
-			"label": "npm: typecheck",
-			"problemMatcher": [
-				"$tsc"
-			]
+			"script": "gen-check",
+			"group": {
+				"kind": "build",
+			},
+			"problemMatcher": [],
+			"label": "gen-check",
+			"detail": "typecheck on generated files",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false,
+				"revealProblems": "onProblem"
+			}
 		}
 	]
 }

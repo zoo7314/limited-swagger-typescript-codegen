@@ -1,30 +1,35 @@
-import { OpenAPIV2 } from "openapi-types"
-
 type GenArgs = {
   /**
-   * swagger json 对象
-   * 或者是 能获取 json 的url
+   * swagger json object
+   * or url that fetches it
    */
   input: string | object
   /**
-   * 输出目录
+   * output directory
    */
-  dest: string
+  output: string
   /**
-   * client 文件的路径, client应为一个AxiosInstance
+   * path of client.ts
    */
   clientPath?: string
   /**
-   * 接口 url 的固定起始路径, 最终生成的接口路径中会去掉
+   * url prefix
    */
   prefix?: string
-  /**
-   * 
-   * 改写 swagger json 中的类型定义
-   */
-  rewriteInputTypeSchema?: (schema: OpenAPIV2.Schema)
-    => OpenAPIV2.Schema
+  preset?: (config: GenArgs) => void
+  apiNamingMethod?: (api: any) => any
+  eachInputTypeSchemaObject?: (schema: any) => any
+  eachApi?: (arg: any) => any
+  afterOutput?: () => any
 }
-declare function gen(arg: GenArgs): Promise<void>;
-export = gen
+declare function gen(config: GenArgs): Promise<void>;
+declare function nameApiWithUrlAndMethod(api: any): any;
+
+declare function workplacePreset(config: GenArgs): void
+
+export {
+  gen,
+  nameApiWithUrlAndMethod,
+  workplacePreset,
+}
 

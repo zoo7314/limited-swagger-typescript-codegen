@@ -1,5 +1,5 @@
 {{#if namespace}}
 import * as {{namespace}} from '{{this.module}}'
 {{else}}
-import {{#if defaultExport}}{{defaultExport}}{{#if namedExports.length}}, {{/if}}{{/if}}{{#if namedExports.length}}\{ {{namedExportsJoined}} \}{{/if}} from '{{this.module}}'
+import {{#if defaultItem.identifier}}{{defaultItem.identifier}}{{#if namedItems.length}}, {{/if}}{{/if}}{{#if namedItems.length}}\{ {{namedItemsJoined}} \}{{/if}} from '{{this.module}}'
 {{/if}}

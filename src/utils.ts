@@ -1,7 +1,11 @@
-import { pinyin } from "pinyin-pro"
+
+export const valueOfType = <T>(value: T): T => value
 
 export const isNullish = (value: any): value is (undefined | null) => value === undefined ||
   value === null
+
+export const isFunction = (value: any): value is ((...args: any[]) => any) =>
+  typeof value === 'function'
 
 export const ifElement = <T>(
   truth: boolean,
@@ -28,7 +32,7 @@ export const upperFirst = (str: string | number | symbol) => {
 
 export const camelCase = (str: string) => {
   return str.split(/\W/).map((s, i) => {
-    if (i === 0) return s 
+    if (i === 0) return s
     return s.length
       ? `${s[0].toUpperCase()}${s.slice(1)}`
       : ''
@@ -38,32 +42,12 @@ export const camelCase = (str: string) => {
 export const pascalCase = (str: string) => upperFirst(camelCase(str))
 
 
-const regCN = /[\u4e00-\u9fa5|\u3002|\uff1f|\uff01|\uff0c|\u3001|\uff1b|\uff1a|\u201c|\u201d|\u2018|\u2019|\uff08|\uff09|\u300a|\u300b|\u3008|\u3009|\u3010|\u3011|\u300e|\u300f|\u300c|\u300d|\ufe43|\ufe44|\u3014|\u3015|\u2026|\u2014|\uff5e|\ufe4f|\uffe5]+/g
-const regCNPuncs = /[\u3002|\uff1f|\uff01|\uff0c|\u3001|\uff1b|\uff1a|\u201c|\u201d|\u2018|\u2019|\uff08|\uff09|\u300a|\u300b|\u3008|\u3009|\u3010|\u3011|\u300e|\u300f|\u300c|\u300d|\ufe43|\ufe44|\u3014|\u3015|\u2026|\u2014|\uff5e|\ufe4f|\uffe5]/g
 export const regParemterWithAccessPath = /^(\w+)(\[\d+]|\.)/
-export const regIdentifierOddChars = /[«»\/\s-]/g
-
-export const includesCN = (str: string) => regCN.test(str)
+export const regIdentifierOddChars = /[«»\/\s-_]/g
 
 
-export const cleanCNPuncs = (str: string) => {
-  str = str.replace(regCNPuncs, '')
-  return str
-}
 
-export const normalizeCN = (str: string) => {
-  str = cleanCNPuncs(str)
-  str = str.replace(regCN, (match) => {
-    let replacement = pinyin(match, {
-      toneType: 'none',
-      v: true,
-    })
-    replacement = ' ' + replacement + ' '
-    return replacement
-  })
-  str = str.trim()
-  return str
-}
+
 
 
 export const uniqBy = <T extends Record<string, any>>(array: T[], key: string) => {

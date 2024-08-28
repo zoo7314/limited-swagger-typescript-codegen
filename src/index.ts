@@ -1,39 +1,47 @@
-import axios from 'axios'
-import * as defaults from './defaults'
-import * as objects from './objects'
 import { output } from './output'
-import parse from './parse'
-import { OpenAPIV2 } from 'openapi-types'
-import { GenArgs } from './types'
+import { ConfigCallbacks, GenArgs } from './types'
+import { objects } from './objects'
+import parse from './v2/parse'
+import { ParseResult } from './entities/ParseResult'
+import { invokeConfigCallback } from './invokeConfigCallback'
 
 
 async function gen(config: GenArgs): Promise<void> {
   global.apiGenConfig = config
-  const { input, dest } = config
-  let inputFinal = defaults.openApiV2Doc()
+  invokeConfigCallback(ConfigCallbacks.preset, [config])
+  const {
+    input,
+    output: dest,
+  } = config
+  let inputFinal = objects.openApiDoc()
   if (typeof input === 'string') {
     inputFinal = await fetchRemoteDocInput(input)
   } else {
     inputFinal = input
   }
-  const result = parse({ input: inputFinal })
+  let result = ParseResult.create()
+  if (objects.isOpenApiV2Doc(inputFinal)) {
+    result = parse({ input: inputFinal })
+  }
+  invokeConfigCallback(ConfigCallbacks.beforeOutput, [result])
   await output({ result, dest })
+  invokeConfigCallback(ConfigCallbacks.afterOutput)
 }
 
 
 async function fetchRemoteDocInput(url: string) {
-  return await axios.get<OpenAPIV2.Document>(url)
-    .then(response => response.data)
+  const res = await fetch(url)
+  const json = await res.json()
+  return json
 }
 
 
+export {
+  gen,
+}
 
-
-
-export default gen
-
-
-
+export { nameApiWithUrlAndMethod } from './nameApiWithUrlAndMethod'
+export * from './workplacePreset'
 
 
 

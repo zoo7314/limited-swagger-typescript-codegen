@@ -1,104 +1,125 @@
-import { OpenAPIV2 } from "openapi-types"
+import { OpenAPIV2, OpenAPIV3, OpenAPIV3_1 } from "openapi-types"
 
-export type ResolvedType = {
-  typeValue: string
-  deps: string[]
+
+type OpenApiDoc =
+  | OpenAPIV2.Document
+  | OpenAPIV3.Document
+  | OpenAPIV3_1.Document
+
+export const openApiV2Doc = (
+  obj: OpenAPIV2.Document = {
+    swagger: '',
+    info: {
+      title: '',
+      version: '',
+    },
+    paths: {},
+  },
+): OpenAPIV2.Document => {
+  return {
+    ...obj,
+    swagger: '2.0',
+  }
+}
+export const isOpenApiV2Doc = (obj: OpenApiDoc): obj is OpenAPIV2.Document => {
+  return (obj as any).swagger === '2.0'
 }
 
-
-export type ObjectSchema = {
-  identifier: string
-  properties: Property[]
-  deps: string[]
+export const openApiV3Doc = (
+  obj: OpenAPIV3.Document = {
+    openapi: '',
+    info: {
+      title: '',
+      version: '',
+    },
+    paths: {},
+  },
+): OpenAPIV3.Document => {
+  return {
+    ...obj,
+    openapi: '3.0.0',
+  }
 }
 
-export type Property = {
-  identifier: string
-  type: string
-  description: string
-  required: boolean
-  deps: string[]
+export const openApiV3_1Doc = (
+  obj: OpenAPIV3_1.Document = {
+    openapi: '',
+    info: {
+      title: '',
+      version: '',
+    },
+    paths: {},
+  },
+): OpenAPIV3_1.Document => {
+  return {
+    ...obj,
+    openapi: '3.0.1',
+  }
 }
 
-export type SchemaFileModel = {
-  schema: ObjectSchema
-  imports: ImportDecl[]
-}
-
-export type ImportDecl = {
-  defaultExport: string
-  namedExports: string[]
-  module: string
-  namespace: string
-  get namedExportsJoined(): string
-}
-
-export type Api = {
-  service: string
-  identifier: string
-  method: string
-  url: string
-  summary: string
-  description: string
-  parameters: ApiParameter[]
-  sendFormData: boolean
-  paramsType: string
-  resType: string
-  requestConfigEntries: RequestConfigEntry[]
-  deps: string[]
-  extracts: ObjectSchema[]
-}
-
-export type ApiParameter = Property & {
-  passIn: string
-}
-
-export type RequestConfigEntry = {
-  key: string
-  value: string
-  entries: RequestConfigEntry[]
-}
-
-export type ServiceFileModel = {
-  tag: string
-  name: string
-  apis: Api[]
-  imports: ImportDecl[]
-}
-
-
-export type MainFileModel = {
-  services: ServiceFileModel[]
-  imports: ImportDecl[]
-}
-
-
-
-export type ParseResult = {
-  schemas: SchemaFileModel[]
-  services: ServiceFileModel[]
-  main: MainFileModel
+export const openApiDoc = (
+  obj: OpenApiDoc = openApiV2Doc(),
+): OpenApiDoc => {
+  return obj
 }
 
 
 
 
-
-
-
-export type GenConfig = {
-  clientPath: string
-  prefix: string
+export const operationObject = (): OpenAPIV2.OperationObject => {
+  return {
+    responses: {},
+  }
 }
+
+export const referenceObject = (): OpenAPIV2.ReferenceObject => ({ $ref: '' })
+
+export const parameterObject = (): OpenAPIV2.Parameter => ({ name: '', type: '', in: '' })
+
+export const tagObject = (): OpenAPIV2.TagObject => ({ name: '' })
+
+export const schemaObject = (obj: OpenAPIV2.SchemaObject = {}) => obj
+
+
+
+
 
 export type GenArgs = {
-  input: string | OpenAPIV2.Document
-  dest: string
+  input: string | OpenApiDoc
+  output: string
   clientPath?: string
   prefix?: string
-  rewriteInputTypeSchema?: (schema: OpenAPIV2.Schema)
-    => OpenAPIV2.Schema | undefined
+  preset?: (config: GenArgs) => void
+  apiNamingMethod?: (api: any) => any
+  eachInputTypeSchemaObject?: (schema: any) => any
+  eachApi?: (arg: any) => any
+  beforeOutput?: (arg: any) => any
+  afterOutput?: () => any
 }
+
+export const genArgs = ({
+  input = '',
+  output = '',
+  clientPath = '@/client',
+} = {}) => {
+  return {
+    input,
+    output,
+    clientPath,
+  }
+}
+
+export const ConfigCallbacks = {
+  preset: 'preset',
+  apiNamingMethod: 'apiNamingMethod',
+  eachInputTypeSchemaObject: 'eachInputTypeSchemaObject',
+  eachApi: 'eachApi',
+  beforeOutput: 'beforeOutput',
+  afterOutput: 'afterOutput',
+}
+
+
+
 
 
 

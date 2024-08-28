@@ -1,0 +1,4817 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "描述：",
+    "title": "标题：粤财ai_接口文档"
+  },
+  "host": "100.98.0.200:20160",
+  "basePath": "/",
+  "tags": [
+    {
+        "name": "OCR接口",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "fast-gpt-proxy-controller",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "test",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "发票夹接口",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "发票识别与验真",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "大型语言模型_Agent相关接口文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "大型语言模型__用户会话信息",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "大型语言模型_用户单点登录",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "大型语言模型_用户自定义助手相关接口文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "大型语言模型_聊天文件上传接口文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "大型语言模型_聊天相关接口文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "管理端接口-agent分类分组信息相关接口文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "管理端接口-agent增删改查相关文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "管理端接口-对话日志表接口文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "管理端接口-文件相关文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "管理端接口-智能机器人robot增删改查文档",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "系统通用接口",
+        "x-order": "2147483647"
+    },
+    {
+        "name": "财报识别OCR接口",
+        "x-order": "2147483647"
+    }
+  ],
+  "paths": {
+    "/api/**": {
+        "get": {
+            "tags": [
+                "fast-gpt-proxy-controller"
+            ],
+            "summary": "代理转发fastgpt其他接口",
+            "description": "代理转发fastgpt其他接口，url以api开头",
+            "operationId": "proxyUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        },
+        "head": {
+            "tags": [
+                "fast-gpt-proxy-controller"
+            ],
+            "summary": "代理转发fastgpt其他接口",
+            "description": "代理转发fastgpt其他接口，url以api开头",
+            "operationId": "proxyUsingHEAD",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "204": {
+                    "description": "No Content"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        },
+        "post": {
+            "tags": [
+                "fast-gpt-proxy-controller"
+            ],
+            "summary": "代理转发fastgpt其他接口",
+            "description": "代理转发fastgpt其他接口，url以api开头",
+            "operationId": "proxyUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        },
+        "put": {
+            "tags": [
+                "fast-gpt-proxy-controller"
+            ],
+            "summary": "代理转发fastgpt其他接口",
+            "description": "代理转发fastgpt其他接口，url以api开头",
+            "operationId": "proxyUsingPUT",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        },
+        "delete": {
+            "tags": [
+                "fast-gpt-proxy-controller"
+            ],
+            "summary": "代理转发fastgpt其他接口",
+            "description": "代理转发fastgpt其他接口，url以api开头",
+            "operationId": "proxyUsingDELETE",
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "204": {
+                    "description": "No Content"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        },
+        "options": {
+            "tags": [
+                "fast-gpt-proxy-controller"
+            ],
+            "summary": "代理转发fastgpt其他接口",
+            "description": "代理转发fastgpt其他接口，url以api开头",
+            "operationId": "proxyUsingOPTIONS",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "204": {
+                    "description": "No Content"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        },
+        "patch": {
+            "tags": [
+                "fast-gpt-proxy-controller"
+            ],
+            "summary": "代理转发fastgpt其他接口",
+            "description": "代理转发fastgpt其他接口，url以api开头",
+            "operationId": "proxyUsingPATCH",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "204": {
+                    "description": "No Content"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/common/download/tango/{ouid}": {
+        "get": {
+            "tags": [
+                "系统通用接口"
+            ],
+            "summary": "通过ouid读取/下载tango文件",
+            "description": "本接口会重写向，重定向后读取流数据。如果获取缩略图，则直接返回图片文件流",
+            "operationId": "downloadFromTangoUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "ouid",
+                    "in": "path",
+                    "description": "ouid",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/common/objectInfo/tango/{ouid}": {
+        "get": {
+            "tags": [
+                "系统通用接口"
+            ],
+            "summary": "通过ouid获取tango的对象信息",
+            "operationId": "getObjectInfoUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "ouid",
+                    "in": "path",
+                    "description": "ouid",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "ObjectInfoExt",
+                        "$ref": "#/definitions/ObjectInfoExt"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/common/upload/tango/private": {
+        "post": {
+            "tags": [
+                "系统通用接口"
+            ],
+            "summary": "上文件至tango的私有桶",
+            "description": "保存文件路径为：{yyyyMM}[/type]/文件名",
+            "operationId": "uploadToTangoPrivateUsingPOST",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "file",
+                    "in": "formData",
+                    "description": "文件",
+                    "required": true,
+                    "type": "file"
+                },
+                {
+                    "name": "saveOrigFileName",
+                    "in": "formData",
+                    "description": "是否保存为原始文件名，默认为false",
+                    "required": false,
+                    "type": "boolean"
+                },
+                {
+                    "name": "type",
+                    "in": "formData",
+                    "description": "类型，限中文、英文字母、数字，不超过50个字符，非必填",
+                    "required": false,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "UploadTangoRsp",
+                        "$ref": "#/definitions/UploadTangoRsp"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/agent/category": {
+        "get": {
+            "tags": [
+                "大型语言模型_Agent相关接口文档"
+            ],
+            "summary": "获取所有的agent分类",
+            "description": "不需要请求参数 返回字符串数组",
+            "operationId": "getAgentCategoryUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "AgentTagsResp",
+                        "$ref": "#/definitions/AgentTagsResp"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/agent/defalutAgent": {
+        "get": {
+            "tags": [
+                "大型语言模型_Agent相关接口文档"
+            ],
+            "summary": "默认的Agent配置",
+            "description": "获取通用聊天机器人的配置",
+            "operationId": "getDefalutChatAgentUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "agent表",
+                        "$ref": "#/definitions/agent表"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/agent/efficiencyAgentList": {
+        "get": {
+            "tags": [
+                "大型语言模型_Agent相关接口文档"
+            ],
+            "summary": "按分组查询“效率”分组agent进行展示",
+            "description": "返回效率分组agent,分页返回，分页参数默认方式传",
+            "operationId": "getEfficiencyAgentListUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "description": "关键词",
+                    "required": false,
+                    "type": "string",
+                    "allowEmptyValue": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "PageDTO«agent表»",
+                        "$ref": "#/definitions/PageDTO«agent表»"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/agent/getAgentInfo": {
+        "get": {
+            "tags": [
+                "大型语言模型_Agent相关接口文档"
+            ],
+            "summary": "根据id获取agent表详细信息",
+            "operationId": "getAgentInfoUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "query",
+                    "description": "id",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64",
+                    "allowEmptyValue": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "agent表",
+                        "$ref": "#/definitions/agent表"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/agent/intelligentAgentList": {
+        "get": {
+            "tags": [
+                "大型语言模型_Agent相关接口文档"
+            ],
+            "summary": "按分组查询“智能体”分组agent然后按分类进行展示",
+            "description": "返回智能体分组agent,分页返回，分页参数默认方式传",
+            "operationId": "getIntelligentAgentListUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "description": "关键词",
+                    "required": false,
+                    "type": "string",
+                    "allowEmptyValue": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "PageDTO«agent表»",
+                        "$ref": "#/definitions/PageDTO«agent表»"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/agent/list": {
+        "get": {
+            "tags": [
+                "大型语言模型_Agent相关接口文档"
+            ],
+            "summary": "获取具体某一个分类下的所有agent",
+            "description": "获取具体某一个分类下的所有agent",
+            "operationId": "getAgentByCategoryUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "category",
+                    "in": "query",
+                    "description": "分类category",
+                    "required": true,
+                    "type": "string",
+                    "allowEmptyValue": false
+                },
+                {
+                    "name": "keyword",
+                    "in": "query",
+                    "description": "关键词",
+                    "required": false,
+                    "type": "string",
+                    "allowEmptyValue": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "PageDTO«agent表»",
+                        "$ref": "#/definitions/PageDTO«agent表»"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/download/tango/{ouid}": {
+        "get": {
+            "tags": [
+                "大型语言模型_聊天文件上传接口文档"
+            ],
+            "summary": "通过ouid读取/下载tango文件",
+            "description": "本接口会重写向，重定向后读取流数据。如果获取缩略图，则直接返回图片文件流",
+            "operationId": "downloadFromTangoUsingGET_1",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "ouid",
+                    "in": "path",
+                    "description": "ouid",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/file/getFileInfo": {
+        "get": {
+            "tags": [
+                "大型语言模型_聊天文件上传接口文档"
+            ],
+            "summary": "获取文件信息 查询上传状态",
+            "operationId": "getFileInfoUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "uploadId",
+                    "in": "query",
+                    "description": "请求参数 上传请求uploadId",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64",
+                    "allowEmptyValue": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "FileUploadResp",
+                        "$ref": "#/definitions/FileUploadResp"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/file/upload": {
+        "post": {
+            "tags": [
+                "大型语言模型_聊天文件上传接口文档"
+            ],
+            "summary": "上传文件，后台异步上传需要调用查询接口查询状态",
+            "operationId": "uploadFileUsingPOST",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "chatId",
+                    "description": "chatId",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "file",
+                    "in": "formData",
+                    "description": "文件",
+                    "required": true,
+                    "type": "file"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "FileUploadResp",
+                        "$ref": "#/definitions/FileUploadResp"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/llmUserAssistant/add": {
+        "post": {
+            "tags": [
+                "大型语言模型_用户自定义助手相关接口文档"
+            ],
+            "summary": "新增用户自定义助手",
+            "description": "新增用户自定义助手,如果存在则返回对应的agent",
+            "operationId": "addUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "userAssistantReq",
+                    "description": "userAssistantReq",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "UserAssistantReq",
+                        "$ref": "#/definitions/UserAssistantReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "agent表",
+                        "$ref": "#/definitions/agent表"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/llmUserAssistant/list": {
+        "get": {
+            "tags": [
+                "大型语言模型_用户自定义助手相关接口文档"
+            ],
+            "summary": "查询用户自定义助手列表",
+            "description": "查询用户自定义助手列表,返回对应的agent列表",
+            "operationId": "listUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "agentId",
+                    "in": "query",
+                    "description": "agent-id",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "clientId",
+                    "in": "query",
+                    "description": "客户端id,不相关值为0",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "createTime",
+                    "in": "query",
+                    "description": "创建时间",
+                    "required": true,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                {
+                    "name": "id",
+                    "in": "query",
+                    "description": "主键",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "isDelete",
+                    "in": "query",
+                    "description": "逻辑删除 0：使用 1：删除",
+                    "required": false,
+                    "type": "boolean"
+                },
+                {
+                    "name": "nickName",
+                    "in": "query",
+                    "description": "用户名，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "robotId",
+                    "in": "query",
+                    "description": "机器人id",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "updateTime",
+                    "in": "query",
+                    "description": "更新时间",
+                    "required": false,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                {
+                    "name": "userId",
+                    "in": "query",
+                    "description": "用户id，最大长度100",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "params",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "PageDTO«agent表»",
+                        "$ref": "#/definitions/PageDTO«agent表»"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/objectInfo/tango/{ouid}": {
+        "get": {
+            "tags": [
+                "大型语言模型_聊天文件上传接口文档"
+            ],
+            "summary": "通过ouid获取tango的对象信息",
+            "operationId": "getObjectInfoUsingGET_1",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "ouid",
+                    "in": "path",
+                    "description": "ouid",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "ObjectInfoExt",
+                        "$ref": "#/definitions/ObjectInfoExt"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/session/user": {
+        "get": {
+            "tags": [
+                "大型语言模型__用户会话信息"
+            ],
+            "summary": "获取当前登录用户信息",
+            "operationId": "getUserInfoUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "GetUserInfoResponse",
+                        "$ref": "#/definitions/GetUserInfoResponse"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/sso/checkLogin": {
+        "get": {
+            "tags": [
+                "大型语言模型_用户单点登录"
+            ],
+            "summary": "当前是否有登录用户",
+            "operationId": "isLoginUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "userName",
+                    "in": "query",
+                    "description": "userName",
+                    "required": false,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "boolean"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "1"
+        }
+    },
+    "/llm/sso/login": {
+        "post": {
+            "tags": [
+                "大型语言模型_用户单点登录"
+            ],
+            "summary": "使用票据进行登录",
+            "operationId": "doLoginUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "ticket",
+                    "in": "query",
+                    "description": "CAS票据",
+                    "required": true,
+                    "type": "string",
+                    "allowEmptyValue": false
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "DoLoginResponse",
+                        "$ref": "#/definitions/DoLoginResponse"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "3"
+        }
+    },
+    "/llm/sso/logout": {
+        "post": {
+            "tags": [
+                "大型语言模型_用户单点登录"
+            ],
+            "summary": "单点登出",
+            "operationId": "logoutUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "4"
+        }
+    },
+    "/llm/sso/ssoAuthUrl": {
+        "get": {
+            "tags": [
+                "大型语言模型_用户单点登录"
+            ],
+            "summary": "获取单点服务器地址",
+            "operationId": "getSsoAuthUrlUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "redirectUrl",
+                    "description": "页面回跳地址",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "GetSsoAuthUrlResponse",
+                        "$ref": "#/definitions/GetSsoAuthUrlResponse"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2"
+        }
+    },
+    "/llm/v1/chat/{agentId}/completions": {
+        "post": {
+            "tags": [
+                "大型语言模型_聊天相关接口文档"
+            ],
+            "summary": "聊天接口,路径参数传入agentId",
+            "operationId": "completionsUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "agentId",
+                    "in": "path",
+                    "description": "路径参数agentId",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "in": "body",
+                    "name": "body",
+                    "description": "请求体body",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "SseEmitter",
+                        "$ref": "#/definitions/SseEmitter"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/v1/chat/{agentId}/deleteHistory": {
+        "post": {
+            "tags": [
+                "大型语言模型_聊天相关接口文档"
+            ],
+            "summary": "删除聊天记录,路径参数传入agentId",
+            "description": "如果不传chatId则删除全部",
+            "operationId": "deleteHistoryUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "agentId",
+                    "in": "path",
+                    "description": "路径参数agentId",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "请求体参数",
+                    "required": false,
+                    "schema": {
+                        "originalRef": "ChatHistoryDeleteReq",
+                        "$ref": "#/definitions/ChatHistoryDeleteReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/v1/chat/{agentId}/histories": {
+        "get": {
+            "tags": [
+                "大型语言模型_聊天相关接口文档"
+            ],
+            "summary": "获取聊天历史记录,路径参数传入agentId",
+            "operationId": "getChatHistoriesUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "agentId",
+                    "in": "path",
+                    "description": "路径参数agentId",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "originalRef": "聊天对话表",
+                            "$ref": "#/definitions/聊天对话表"
+                        }
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/v1/chat/{agentId}/init": {
+        "get": {
+            "tags": [
+                "大型语言模型_聊天相关接口文档"
+            ],
+            "summary": "聊天初始化,路径参数传入agentId",
+            "operationId": "initChatUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "agentId",
+                    "in": "path",
+                    "description": "agentId",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "in": "body",
+                    "name": "chatId",
+                    "description": "对话ID，为空时为新对话",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "object"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/v1/chat/{agentId}/tempFileDataset": {
+        "post": {
+            "tags": [
+                "大型语言模型_聊天相关接口文档"
+            ],
+            "summary": "创建临时知识库,路径参数传入agentId",
+            "operationId": "createTempFileDatasetUsingPOST",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "agentId",
+                    "in": "path",
+                    "description": "路径参数agentId",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "file",
+                    "in": "formData",
+                    "description": "file",
+                    "required": false,
+                    "type": "file"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/llm/v1/chat/{agentId}/updateHistory": {
+        "post": {
+            "tags": [
+                "大型语言模型_聊天相关接口文档"
+            ],
+            "summary": "修改聊天记录相关字段,路径参数传入agentId",
+            "description": "自定义标题传参数customTitle,指定传参isTop",
+            "operationId": "updateHistoryUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "agentId",
+                    "in": "path",
+                    "description": "路径参数agentId",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "请求体参数",
+                    "required": false,
+                    "schema": {
+                        "originalRef": "ChatHistoryReq",
+                        "$ref": "#/definitions/ChatHistoryReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/file/getFileUrl": {
+        "get": {
+            "tags": [
+                "管理端接口-文件相关文档"
+            ],
+            "summary": "获取图片文件打开地址接口",
+            "operationId": "getFileUrlUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "fileId",
+                    "description": "文件id",
+                    "required": false,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "OpenFileResp",
+                        "$ref": "#/definitions/OpenFileResp"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/file/uploadPic": {
+        "post": {
+            "tags": [
+                "管理端接口-文件相关文档"
+            ],
+            "summary": "上传图片接口-传图片文件的base64编码串",
+            "operationId": "uploadFileUsingPOST_1",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "req",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "OpenFileReq",
+                        "$ref": "#/definitions/OpenFileReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "OpenFileResp",
+                        "$ref": "#/definitions/OpenFileResp"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/financialReport/download/{orderNo}": {
+        "get": {
+            "tags": [
+                "财报识别OCR接口"
+            ],
+            "summary": "下载财报识别结果文件",
+            "operationId": "downloadUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "orderNo",
+                    "in": "path",
+                    "description": "orderNo",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/financialReport/tableOcr": {
+        "post": {
+            "tags": [
+                "财报识别OCR接口"
+            ],
+            "summary": "财报识别OCR，文件使用MultipartFile传入",
+            "operationId": "tableOcrUsingPOST",
+            "consumes": [
+                "multipart/form-data"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "file",
+                    "in": "formData",
+                    "description": "文件",
+                    "required": true,
+                    "type": "file"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "TableOcrShowRsp",
+                        "$ref": "#/definitions/TableOcrShowRsp"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/financialReport/tableOcrFileBase64": {
+        "post": {
+            "tags": [
+                "财报识别OCR接口"
+            ],
+            "summary": "财报识别OCR，文件使用base64值传入",
+            "operationId": "tableOcrFileBase64UsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "ocrReq",
+                    "description": "ocrReq",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "OcrFileReq",
+                        "$ref": "#/definitions/OcrFileReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "TableOcrShowRsp",
+                        "$ref": "#/definitions/TableOcrShowRsp"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/invoice/ocr": {
+        "post": {
+            "tags": [
+                "发票识别与验真"
+            ],
+            "summary": "发票识别",
+            "description": "支持图片格式：jpg、jpeg、png，支持PDF",
+            "operationId": "ocrUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "App-Id",
+                    "in": "header",
+                    "description": "App-Id",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "apply",
+                    "description": "apply",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "InvoiceOcrApplyReq",
+                        "$ref": "#/definitions/InvoiceOcrApplyReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "InvoiceOcrData",
+                        "$ref": "#/definitions/InvoiceOcrData"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/invoice/verify": {
+        "post": {
+            "tags": [
+                "发票识别与验真"
+            ],
+            "summary": "发票验真",
+            "operationId": "validateUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "App-Id",
+                    "in": "header",
+                    "description": "App-Id",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "in": "body",
+                    "name": "apply",
+                    "description": "apply",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "InvoiceCheckApplyReq",
+                        "$ref": "#/definitions/InvoiceCheckApplyReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "boolean"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/invoicepool/getInvoiceList": {
+        "post": {
+            "tags": [
+                "发票夹接口"
+            ],
+            "summary": "获取发票列表",
+            "operationId": "getInvoiceListUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "query",
+                    "description": "query",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "UserInvoiceQuery",
+                        "$ref": "#/definitions/UserInvoiceQuery"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "object"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/invoicepool/invoiceCheck": {
+        "post": {
+            "tags": [
+                "发票夹接口"
+            ],
+            "summary": "发票验真",
+            "operationId": "invoiceCheckUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "req",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "UserInvoiceCheckReq",
+                        "$ref": "#/definitions/UserInvoiceCheckReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "object"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/invoicepool/invoiceDetail": {
+        "post": {
+            "tags": [
+                "发票夹接口"
+            ],
+            "summary": "获取发票详情",
+            "operationId": "invoiceDetailUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "req",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "UserInvoiceCheckReq",
+                        "$ref": "#/definitions/UserInvoiceCheckReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "object"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/invoicepool/invoiceFileOcr": {
+        "post": {
+            "tags": [
+                "发票夹接口"
+            ],
+            "summary": "发票识别-验真-连号校验-加入个人发票夹",
+            "description": "支持图片格式：jpg、jpeg、png，支持PDF。验真可能无法实时执行，可以另调用发票验真接口",
+            "operationId": "invoiceFileOcrUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "req",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "UserInvoiceOcrReq",
+                        "$ref": "#/definitions/UserInvoiceOcrReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "object"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/invoicepool/invoiceLock": {
+        "post": {
+            "tags": [
+                "发票夹接口"
+            ],
+            "summary": "发票占用/发票锁定",
+            "operationId": "invoiceLockUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "req",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "UserInvoiceLockReq",
+                        "$ref": "#/definitions/UserInvoiceLockReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/invoicepool/invoiceRelease": {
+        "post": {
+            "tags": [
+                "发票夹接口"
+            ],
+            "summary": "发票释放",
+            "operationId": "invoiceReleaseUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "req",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "UserInvoiceReleaseReq",
+                        "$ref": "#/definitions/UserInvoiceReleaseReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmAgent/add": {
+        "post": {
+            "tags": [
+                "管理端接口-agent增删改查相关文档"
+            ],
+            "summary": "新增agent",
+            "operationId": "addUsingPOST_1",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "llmAgent",
+                    "description": "llmAgent",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "agent表",
+                        "$ref": "#/definitions/agent表"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmAgent/list": {
+        "get": {
+            "tags": [
+                "管理端接口-agent增删改查相关文档"
+            ],
+            "summary": "查询agent列表",
+            "operationId": "listUsingGET_1",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "avatar",
+                    "in": "query",
+                    "description": "头像图标，最大长度200",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "bigCard",
+                    "in": "query",
+                    "description": "大标题，最大长度200",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "category",
+                    "in": "query",
+                    "description": "分类,分组>分类，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "clientId",
+                    "in": "query",
+                    "description": "客户端id,不相关值为0",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "createTime",
+                    "in": "query",
+                    "description": "创建时间",
+                    "required": false,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                {
+                    "name": "cueWordContent",
+                    "in": "query",
+                    "description": "提示词内容，最大长度2000",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "fileSize",
+                    "in": "query",
+                    "description": "上传文件大小,单位KB",
+                    "required": false,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "fileSuffix",
+                    "in": "query",
+                    "description": "文件后缀类型 txt pdf docx xlsx等，最大长度64",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "groupCode",
+                    "in": "query",
+                    "description": "分组,分组>分类，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "id",
+                    "in": "query",
+                    "description": "主键,即agentId",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "isAllowUpload",
+                    "in": "query",
+                    "description": "是否允许上传文件 1允许 0不允许",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "name",
+                    "in": "query",
+                    "description": "agent名称，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "profilePictureFileId",
+                    "in": "query",
+                    "description": "大头照或者背景图对应的fileId，最大长度200",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "profilePictureUrl",
+                    "in": "query",
+                    "description": "大头照,背景图，最大长度200",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "prologue",
+                    "in": "query",
+                    "description": "开场白，最大长度200",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "promptRecommend",
+                    "in": "query",
+                    "description": "提示词建议-json数据，最大长度500",
+                    "required": false,
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "collectionFormat": "multi"
+                },
+                {
+                    "name": "robotAppId",
+                    "in": "query",
+                    "description": "机器人应用ID，对应FastGPT应用ID",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "robotId",
+                    "in": "query",
+                    "description": "机器人id",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "smallCard",
+                    "in": "query",
+                    "description": "小标题，最大长度200",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "sort",
+                    "in": "query",
+                    "description": "排序",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "status",
+                    "in": "query",
+                    "description": "状态,是否发布:1发布 0下架",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "summary",
+                    "in": "query",
+                    "description": "agent简介，最大长度500",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "updateTime",
+                    "in": "query",
+                    "description": "更新时间",
+                    "required": false,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                {
+                    "name": "params",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "PageDTO«agent表»",
+                        "$ref": "#/definitions/PageDTO«agent表»"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmAgent/update": {
+        "post": {
+            "tags": [
+                "管理端接口-agent增删改查相关文档"
+            ],
+            "summary": "修改agent表",
+            "operationId": "editUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "llmAgent",
+                    "description": "llmAgent",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "agent表",
+                        "$ref": "#/definitions/agent表"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmAgent/{ids}": {
+        "delete": {
+            "tags": [
+                "管理端接口-agent增删改查相关文档"
+            ],
+            "summary": "删除agent表",
+            "operationId": "removeUsingDELETE",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "ids",
+                    "in": "path",
+                    "description": "ids",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "204": {
+                    "description": "No Content"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmAgent/{id}": {
+        "get": {
+            "tags": [
+                "管理端接口-agent增删改查相关文档"
+            ],
+            "summary": "获取agent详细信息",
+            "operationId": "getInfoUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "id",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "agent表",
+                        "$ref": "#/definitions/agent表"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmAgentTagsGroup/groupList": {
+        "get": {
+            "tags": [
+                "管理端接口-agent分类分组信息相关接口文档"
+            ],
+            "summary": "查询agent分组表列表",
+            "operationId": "groupListUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmAgentTagsGroup/tagsList/{groupName}": {
+        "get": {
+            "tags": [
+                "管理端接口-agent分类分组信息相关接口文档"
+            ],
+            "summary": "根据分组group查询对应的agent分类表列表",
+            "operationId": "tagsListUsingGET",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "groupName",
+                    "in": "path",
+                    "description": "groupName",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmChatLog/list": {
+        "get": {
+            "tags": [
+                "管理端接口-对话日志表接口文档"
+            ],
+            "summary": "查询对话日志表列表",
+            "operationId": "listUsingGET_2",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "agentId",
+                    "in": "query",
+                    "description": "agent-id",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "chatId",
+                    "in": "query",
+                    "description": "对话id(fastgpt的chat_id)，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "clientId",
+                    "in": "query",
+                    "description": "客户端id,不相关值为0",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "costTime",
+                    "in": "query",
+                    "description": "耗时(秒)",
+                    "required": true,
+                    "type": "number",
+                    "format": "double"
+                },
+                {
+                    "name": "costTokens",
+                    "in": "query",
+                    "description": "消耗tokens",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "createTime",
+                    "in": "query",
+                    "description": "创建时间",
+                    "required": true,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                {
+                    "name": "id",
+                    "in": "query",
+                    "description": "主键",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "nickName",
+                    "in": "query",
+                    "description": "用户名，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "reqContent",
+                    "in": "query",
+                    "description": "输入参数，最大长度65535",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "respContent",
+                    "in": "query",
+                    "description": "输出参数，最大长度65535",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "robotId",
+                    "in": "query",
+                    "description": "机器人id",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "status",
+                    "in": "query",
+                    "description": "请求状态 1：正常 0：异常",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "userId",
+                    "in": "query",
+                    "description": "用户id，最大长度100",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "params",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "PageDTO«对话日志表»",
+                        "$ref": "#/definitions/PageDTO«对话日志表»"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmRobot/add": {
+        "post": {
+            "tags": [
+                "管理端接口-智能机器人robot增删改查文档"
+            ],
+            "summary": "新增智能机器人表",
+            "operationId": "addUsingPOST_2",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "llmRobot",
+                    "description": "llmRobot",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "智能机器人表",
+                        "$ref": "#/definitions/智能机器人表"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmRobot/list": {
+        "get": {
+            "tags": [
+                "管理端接口-智能机器人robot增删改查文档"
+            ],
+            "summary": "查询智能机器人表列表",
+            "operationId": "listUsingGET_3",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "createTime",
+                    "in": "query",
+                    "description": "创建时间",
+                    "required": true,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                {
+                    "name": "id",
+                    "in": "query",
+                    "description": "主键",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                },
+                {
+                    "name": "maxConcurrency",
+                    "in": "query",
+                    "description": "最高并发数",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int32"
+                },
+                {
+                    "name": "robotAppId",
+                    "in": "query",
+                    "description": "机器人应用ID，对应FastGPT应用ID，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "robotAppSecret",
+                    "in": "query",
+                    "description": "机器人访问授权码，最大长度200",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "robotAppServerHost",
+                    "in": "query",
+                    "description": "机器人应用服务主机地址，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "robotAppServerProvider",
+                    "in": "query",
+                    "description": "机器人应用服务provider名，最大长度64",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "robotName",
+                    "in": "query",
+                    "description": "机器人名称，最大长度100",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "updateTime",
+                    "in": "query",
+                    "description": "更新时间",
+                    "required": false,
+                    "type": "string",
+                    "format": "date-time"
+                },
+                {
+                    "name": "params",
+                    "in": "query",
+                    "required": false,
+                    "type": "object"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "PageDTO«智能机器人表»",
+                        "$ref": "#/definitions/PageDTO«智能机器人表»"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmRobot/update": {
+        "post": {
+            "tags": [
+                "管理端接口-智能机器人robot增删改查文档"
+            ],
+            "summary": "修改智能机器人表",
+            "operationId": "editUsingPOST_1",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "llmRobot",
+                    "description": "llmRobot",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "智能机器人表",
+                        "$ref": "#/definitions/智能机器人表"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmRobot/{ids}": {
+        "delete": {
+            "tags": [
+                "管理端接口-智能机器人robot增删改查文档"
+            ],
+            "summary": "删除智能机器人表",
+            "operationId": "removeUsingDELETE_1",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "ids",
+                    "in": "path",
+                    "description": "ids",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                },
+                "204": {
+                    "description": "No Content"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/llmRobot/{id}": {
+        "get": {
+            "tags": [
+                "管理端接口-智能机器人robot增删改查文档"
+            ],
+            "summary": "获取智能机器人表详细信息",
+            "operationId": "getInfoUsingGET_1",
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "description": "id",
+                    "required": true,
+                    "type": "integer",
+                    "format": "int64"
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "智能机器人表",
+                        "$ref": "#/definitions/智能机器人表"
+                    }
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/ocr/common": {
+        "post": {
+            "tags": [
+                "OCR接口"
+            ],
+            "summary": "普通OCR，仅对文字进行识别",
+            "operationId": "commonOcrUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "ocrReq",
+                    "description": "ocrReq",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "OcrReq",
+                        "$ref": "#/definitions/OcrReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "OcrRsp",
+                        "$ref": "#/definitions/OcrRsp"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/ocr/tableOcrFileBase64": {
+        "post": {
+            "tags": [
+                "OCR接口"
+            ],
+            "summary": "表格OCR，文件使用base64值传入",
+            "operationId": "tableOcrFileBase64UsingPOST_1",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "ocrReq",
+                    "description": "ocrReq",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "TextOcrFileReq",
+                        "$ref": "#/definitions/TextOcrFileReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "TableOcrRsp",
+                        "$ref": "#/definitions/TableOcrRsp"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/openapi/ocr/visitingCard": {
+        "post": {
+            "tags": [
+                "OCR接口"
+            ],
+            "summary": "名片OCR，返回已识别的文字，以及名片的结构化参数",
+            "operationId": "visitingCardOcrUsingPOST",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "ocrReq",
+                    "description": "ocrReq",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "OcrReq",
+                        "$ref": "#/definitions/OcrReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "名片识别内容",
+                        "$ref": "#/definitions/名片识别内容"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    },
+    "/test/uploadPic": {
+        "post": {
+            "tags": [
+                "test"
+            ],
+            "summary": "上传图片接口-传图片文件的base64编码串",
+            "operationId": "uploadFileUsingPOST_2",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "*/*"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "req",
+                    "description": "req",
+                    "required": true,
+                    "schema": {
+                        "originalRef": "OpenFileReq",
+                        "$ref": "#/definitions/OpenFileReq"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK",
+                    "schema": {
+                        "originalRef": "OpenFileResp",
+                        "$ref": "#/definitions/OpenFileResp"
+                    }
+                },
+                "201": {
+                    "description": "Created"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                }
+            },
+            "deprecated": false,
+            "x-order": "2147483647"
+        }
+    }
+  },
+  "definitions": {
+      "AgentTagsResp": {
+          "type": "object",
+          "properties": {
+              "agentTags": {
+                  "type": "array",
+                  "description": "agent分类",
+                  "items": {
+                      "type": "string"
+                  }
+              }
+          },
+          "title": "AgentTagsResp"
+      },
+      "Card": {
+          "type": "object",
+          "properties": {
+              "addresses": {
+                  "type": "array",
+                  "description": "地址",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "companyName": {
+                  "type": "string",
+                  "description": "公司名称"
+              },
+              "department": {
+                  "type": "string",
+                  "description": "部门"
+              },
+              "emails": {
+                  "type": "array",
+                  "description": "邮箱地址",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "faxes": {
+                  "type": "array",
+                  "description": "传真号码",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "mobilePhones": {
+                  "type": "array",
+                  "description": "移动电话号码",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "name": {
+                  "type": "string",
+                  "description": "姓名"
+              },
+              "post": {
+                  "type": "string",
+                  "description": "职务"
+              },
+              "telephones": {
+                  "type": "array",
+                  "description": "固定电话号码",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "vebsites": {
+                  "type": "array",
+                  "description": "网址",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "zipCode": {
+                  "type": "string",
+                  "description": "邮编"
+              }
+          },
+          "title": "Card"
+      },
+      "ChatHistoryDeleteReq": {
+          "type": "object",
+          "properties": {
+              "chatId": {
+                  "type": "string",
+                  "description": "chatId"
+              }
+          },
+          "title": "ChatHistoryDeleteReq"
+      },
+      "ChatHistoryReq": {
+          "type": "object",
+          "required": [
+              "chatId"
+          ],
+          "properties": {
+              "chatId": {
+                  "type": "string",
+                  "description": "chatId"
+              },
+              "customTitle": {
+                  "type": "string",
+                  "description": "用户自定义标题，最大长度100"
+              },
+              "isTop": {
+                  "type": "boolean",
+                  "description": "是否置顶 0：否 1：是"
+              }
+          },
+          "title": "ChatHistoryReq"
+      },
+      "DoLoginResponse": {
+          "type": "object",
+          "properties": {
+              "tokenKey": {
+                  "type": "string",
+                  "description": "令牌键名"
+              },
+              "tokenSessionTimeout": {
+                  "type": "string",
+                  "description": "令牌会话剩余时间"
+              },
+              "tokenValue": {
+                  "type": "string",
+                  "description": "令牌值"
+              }
+          },
+          "title": "DoLoginResponse"
+      },
+      "FileUploadResp": {
+          "type": "object",
+          "properties": {
+              "fileId": {
+                  "type": "string",
+                  "description": "文件id,文件处理状态status=1时候有值"
+              },
+              "fileName": {
+                  "type": "string",
+                  "description": "文件名称,文件处理状态status=1时候有值"
+              },
+              "fileUrl": {
+                  "type": "string",
+                  "description": "文件下载url,文件处理状态status=1时候有值"
+              },
+              "status": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "文件处理状态 0待处理 1上传成功 2失败"
+              },
+              "uploadId": {
+                  "type": "integer",
+                  "format": "int64",
+                  "description": "请求上传id"
+              }
+          },
+          "title": "FileUploadResp"
+      },
+      "GetSsoAuthUrlResponse": {
+          "type": "object",
+          "properties": {
+              "url": {
+                  "type": "string",
+                  "description": "单点服务器链接"
+              }
+          },
+          "title": "GetSsoAuthUrlResponse"
+      },
+      "GetUserInfoResponse": {
+          "type": "object",
+          "properties": {
+              "nickname": {
+                  "type": "string",
+                  "description": "用户昵称"
+              },
+              "userId": {
+                  "type": "string",
+                  "description": "用户标识"
+              }
+          },
+          "title": "GetUserInfoResponse"
+      },
+      "InvoiceCheckApplyReq": {
+          "type": "object",
+          "required": [
+              "serialNo"
+          ],
+          "properties": {
+              "amount": {
+                  "type": "number",
+                  "description": "不含税金额 (type = 1 6 需要)"
+              },
+              "checkCode": {
+                  "type": "string",
+                  "description": "校验码 type =   2 3 4 5 需要"
+              },
+              "invoiceCode": {
+                  "type": "string",
+                  "description": "发票代码"
+              },
+              "invoiceNo": {
+                  "type": "string",
+                  "description": "发票号码"
+              },
+              "openDate": {
+                  "type": "string",
+                  "description": "开票日期"
+              },
+              "serialNo": {
+                  "type": "string",
+                  "description": "申请流水"
+              },
+              "total": {
+                  "type": "number",
+                  "description": "总金额  type = 7 需要"
+              },
+              "type": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "发票类型 1 增值税专用发票 2 增值税普通发票 3 增值税电子普通发票 4 增值税普通发票(卷票) 5 增值税普通发票（通行费）6 机动车统一销售发票 7 二手车机动车销售统一发票"
+              }
+          },
+          "title": "InvoiceCheckApplyReq"
+      },
+      "InvoiceOcrApplyReq": {
+          "type": "object",
+          "required": [
+              "imageBase64",
+              "serialNo"
+          ],
+          "properties": {
+              "imageBase64": {
+                  "type": "string",
+                  "description": "发票图片Base64"
+              },
+              "serialNo": {
+                  "type": "string",
+                  "description": "申请流水"
+              }
+          },
+          "title": "InvoiceOcrApplyReq"
+      },
+      "InvoiceOcrData": {
+          "type": "object",
+          "properties": {
+              "authenticity": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "captcha": {
+                  "type": "string",
+                  "description": "发票校验码"
+              },
+              "checkStatus": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "invoiceCode": {
+                  "type": "string",
+                  "description": "发票代码"
+              },
+              "invoiceNo": {
+                  "type": "string",
+                  "description": "发票号码"
+              },
+              "kind": {
+                  "type": "string",
+                  "description": "商品类型"
+              },
+              "openDate": {
+                  "type": "string",
+                  "description": "开票日期"
+              },
+              "price": {
+                  "type": "number",
+                  "description": "价税合计（含税价）"
+              },
+              "priceWithoutTax": {
+                  "type": "number",
+                  "description": "金额（不含税价）"
+              },
+              "purchaser": {
+                  "type": "string",
+                  "description": "购买方"
+              },
+              "purchaserTaxNo": {
+                  "type": "string",
+                  "description": "买方税号"
+              },
+              "remark": {
+                  "type": "string"
+              },
+              "salesTaxNo": {
+                  "type": "string",
+                  "description": "卖方税号"
+              },
+              "seller": {
+                  "type": "string",
+                  "description": "销售方"
+              },
+              "status": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "发票本身状态，发票云接口返回字段: 0=正常，1=失控，2=作废，3=红字，4=异常票; OA推送的是：0.初始状态 1.冻结状态 2.核销状态"
+              },
+              "tax": {
+                  "type": "number",
+                  "description": "税额（税价）"
+              },
+              "type": {
+                  "type": "string",
+                  "description": "发票类型"
+              },
+              "typeName": {
+                  "type": "string",
+                  "description": "发票类型"
+              }
+          },
+          "title": "InvoiceOcrData"
+      },
+      "ObjectInfoExt": {
+          "type": "object",
+          "required": [
+              "objectName",
+              "ouid",
+              "simpleName",
+              "size"
+          ],
+          "properties": {
+              "accessUrl": {
+                  "type": "string",
+                  "description": "对象访问地址，为门户地址"
+              },
+              "createBy": {
+                  "type": "string",
+                  "description": "创建人，最大长度50"
+              },
+              "createTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "数据创建日期"
+              },
+              "mineType": {
+                  "type": "string",
+                  "description": "媒体类型，最大长度50"
+              },
+              "objectName": {
+                  "type": "string",
+                  "description": "对象名，即全路径名，最大长度4000"
+              },
+              "ouid": {
+                  "type": "string",
+                  "description": "对象标识，最大长度50"
+              },
+              "simpleName": {
+                  "type": "string",
+                  "description": "对象简称，最后一截，最大长度128"
+              },
+              "size": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "对象大小 ，单位Byte"
+              },
+              "updateBy": {
+                  "type": "string",
+                  "description": "更新人，最大长度50"
+              },
+              "updateTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "数据更新日期"
+              }
+          },
+          "title": "ObjectInfoExt"
+      },
+      "OcrFileReq": {
+          "type": "object",
+          "required": [
+              "file",
+              "suffix"
+          ],
+          "properties": {
+              "file": {
+                  "type": "string",
+                  "description": "文件base64值"
+              },
+              "suffix": {
+                  "type": "string",
+                  "description": "文件后缀名"
+              }
+          },
+          "title": "OcrFileReq"
+      },
+      "OcrReq": {
+          "type": "object",
+          "required": [
+              "base64Img"
+          ],
+          "properties": {
+              "base64Img": {
+                  "type": "string",
+                  "description": "base64编码的图片数据"
+              },
+              "returnResultImg": {
+                  "type": "boolean",
+                  "description": "是否返回结果图片"
+              }
+          },
+          "title": "OcrReq"
+      },
+      "OcrRsp": {
+          "type": "object",
+          "properties": {
+              "resultImg": {
+                  "type": "string",
+                  "description": "请求参数returnResultImg=true时有值，返回结果图片为base64编码的图片，被识别的文本块被打框"
+              },
+              "textBlocks": {
+                  "type": "array",
+                  "description": "已识别的文本块信息列表",
+                  "items": {
+                      "originalRef": "TextBlock",
+                      "$ref": "#/definitions/TextBlock"
+                  }
+              }
+          },
+          "title": "OcrRsp"
+      },
+      "OpenFileReq": {
+          "type": "object",
+          "required": [
+              "base64Pic"
+          ],
+          "properties": {
+              "base64Pic": {
+                  "type": "string",
+                  "description": "图片文件base64编码"
+              }
+          },
+          "title": "OpenFileReq"
+      },
+      "OpenFileResp": {
+          "type": "object",
+          "properties": {
+              "fileId": {
+                  "type": "string",
+                  "description": "文件id"
+              },
+              "fileUrl": {
+                  "type": "string",
+                  "description": "文件在线打开地址"
+              }
+          },
+          "title": "OpenFileResp"
+      },
+      "PageDTO«agent表»": {
+          "type": "object",
+          "properties": {
+              "content": {
+                  "type": "array",
+                  "items": {
+                      "originalRef": "agent表",
+                      "$ref": "#/definitions/agent表"
+                  }
+              },
+              "extraMap": {
+                  "type": "object"
+              },
+              "first": {
+                  "type": "boolean"
+              },
+              "last": {
+                  "type": "boolean"
+              },
+              "number": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "numberOfElements": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "size": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "totalElements": {
+                  "type": "integer",
+                  "format": "int64"
+              },
+              "totalPages": {
+                  "type": "integer",
+                  "format": "int32"
+              }
+          },
+          "title": "PageDTO«agent表»"
+      },
+      "PageDTO«对话日志表»": {
+          "type": "object",
+          "properties": {
+              "content": {
+                  "type": "array",
+                  "items": {
+                      "originalRef": "对话日志表",
+                      "$ref": "#/definitions/对话日志表"
+                  }
+              },
+              "extraMap": {
+                  "type": "object"
+              },
+              "first": {
+                  "type": "boolean"
+              },
+              "last": {
+                  "type": "boolean"
+              },
+              "number": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "numberOfElements": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "size": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "totalElements": {
+                  "type": "integer",
+                  "format": "int64"
+              },
+              "totalPages": {
+                  "type": "integer",
+                  "format": "int32"
+              }
+          },
+          "title": "PageDTO«对话日志表»"
+      },
+      "PageDTO«智能机器人表»": {
+          "type": "object",
+          "properties": {
+              "content": {
+                  "type": "array",
+                  "items": {
+                      "originalRef": "智能机器人表",
+                      "$ref": "#/definitions/智能机器人表"
+                  }
+              },
+              "extraMap": {
+                  "type": "object"
+              },
+              "first": {
+                  "type": "boolean"
+              },
+              "last": {
+                  "type": "boolean"
+              },
+              "number": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "numberOfElements": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "size": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "totalElements": {
+                  "type": "integer",
+                  "format": "int64"
+              },
+              "totalPages": {
+                  "type": "integer",
+                  "format": "int32"
+              }
+          },
+          "title": "PageDTO«智能机器人表»"
+      },
+      "Point": {
+          "type": "object",
+          "properties": {
+              "x": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "X坐标，从图片的左上角为起点"
+              },
+              "y": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "Y坐标，从图片的左上角为起点"
+              }
+          },
+          "title": "Point"
+      },
+      "SseEmitter": {
+          "type": "object",
+          "properties": {
+              "timeout": {
+                  "type": "integer",
+                  "format": "int64"
+              }
+          },
+          "title": "SseEmitter"
+      },
+      "TableBodyDto": {
+          "type": "object",
+          "properties": {
+              "content": {
+                  "type": "array",
+                  "description": "表格主体内容",
+                  "items": {
+                      "originalRef": "TableLineDto",
+                      "$ref": "#/definitions/TableLineDto"
+                  }
+              },
+              "headers": {
+                  "type": "array",
+                  "description": "表头内容",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "tableCols": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "表格列数"
+              },
+              "tableRows": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "表格行数"
+              }
+          },
+          "title": "TableBodyDto"
+      },
+      "TableDto": {
+          "type": "object",
+          "properties": {
+              "body": {
+                  "description": "表格内容",
+                  "originalRef": "TableBodyDto",
+                  "$ref": "#/definitions/TableBodyDto"
+              },
+              "title": {
+                  "description": "标题内容",
+                  "originalRef": "TableTitleDto",
+                  "$ref": "#/definitions/TableTitleDto"
+              }
+          },
+          "title": "TableDto"
+      },
+      "TableLineDto": {
+          "type": "object",
+          "properties": {
+              "cells": {
+                  "type": "array",
+                  "description": "行内表格内容",
+                  "items": {
+                      "type": "string"
+                  }
+              }
+          },
+          "title": "TableLineDto"
+      },
+      "TableOcrRsp": {
+          "type": "object",
+          "properties": {
+              "excel": {
+                  "type": "string",
+                  "description": "excel文件以base64格式输出。仅当 url 参数 excel=1 的时候会输出该字段"
+              },
+              "resultList": {
+                  "type": "array",
+                  "description": "已识别的结果",
+                  "items": {
+                      "originalRef": "TextResult",
+                      "$ref": "#/definitions/TextResult"
+                  }
+              }
+          },
+          "title": "TableOcrRsp"
+      },
+      "TableOcrShowRsp": {
+          "type": "object",
+          "properties": {
+              "orderNo": {
+                  "type": "string",
+                  "description": "本次识别结果序列号"
+              },
+              "tableList": {
+                  "type": "array",
+                  "description": "已识别的结果",
+                  "items": {
+                      "originalRef": "TableDto",
+                      "$ref": "#/definitions/TableDto"
+                  }
+              }
+          },
+          "title": "TableOcrShowRsp"
+      },
+      "TableTitleDto": {
+          "type": "object",
+          "properties": {
+              "text": {
+                  "type": "string",
+                  "description": "识别内容字符串"
+              }
+          },
+          "title": "TableTitleDto"
+      },
+      "TextBlock": {
+          "type": "object",
+          "properties": {
+              "boxPoints": {
+                  "type": "array",
+                  "description": "文本在图片上的坐标，元素4个，分别为左上、右上、右下、左下的四点坐标值",
+                  "items": {
+                      "originalRef": "Point",
+                      "$ref": "#/definitions/Point"
+                  }
+              },
+              "score": {
+                  "type": "number",
+                  "description": "可信度"
+              },
+              "text": {
+                  "type": "string",
+                  "description": "文本内容"
+              }
+          },
+          "title": "TextBlock"
+      },
+      "TextBorder": {
+          "type": "object",
+          "properties": {
+              "bottom": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "单元格的下边框"
+              },
+              "left": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "单元格的左边框"
+              },
+              "right": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "单元格的右边框"
+              },
+              "top": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "单元格的上边框"
+              }
+          },
+          "title": "TextBorder"
+      },
+      "TextLine": {
+          "type": "object",
+          "properties": {
+              "angle": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "图像角度"
+              },
+              "char_candidates": {
+                  "type": "array",
+                  "description": "候选字数组",
+                  "items": {
+                      "type": "array",
+                      "items": {
+                          "type": "string"
+                      }
+                  }
+              },
+              "char_candidates_score": {
+                  "type": "array",
+                  "description": "候选字置信度数组",
+                  "items": {
+                      "type": "array",
+                      "items": {
+                          "type": "number",
+                          "format": "double"
+                      }
+                  }
+              },
+              "char_centers": {
+                  "type": "array",
+                  "description": "字符中心点",
+                  "items": {
+                      "type": "array",
+                      "items": {
+                          "type": "integer",
+                          "format": "int32"
+                      }
+                  }
+              },
+              "char_positions": {
+                  "type": "array",
+                  "description": "字符四边形点坐标",
+                  "items": {
+                      "type": "array",
+                      "items": {
+                          "type": "integer",
+                          "format": "int32"
+                      }
+                  }
+              },
+              "char_scores": {
+                  "type": "array",
+                  "description": "字符置信度",
+                  "items": {
+                      "type": "number",
+                      "format": "double"
+                  }
+              },
+              "direction": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "文字阅读方向"
+              },
+              "handwritten": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "文字是否手写所得"
+              },
+              "position": {
+                  "type": "array",
+                  "description": "以长度为8的整形数组表示四边形， 语义左上角为起始点顺时针构成闭合区域。",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              },
+              "score": {
+                  "type": "number",
+                  "description": "识别置信度"
+              },
+              "text": {
+                  "type": "string",
+                  "description": "识别内容字符串"
+              },
+              "type": {
+                  "type": "string",
+                  "description": "文本类型"
+              }
+          },
+          "title": "TextLine"
+      },
+      "TextOcrFileReq": {
+          "type": "object",
+          "required": [
+              "file",
+              "suffix"
+          ],
+          "properties": {
+              "endPage": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "pdf文档结束页"
+              },
+              "file": {
+                  "type": "string",
+                  "description": "文件base64值"
+              },
+              "isCharacter": {
+                  "type": "boolean",
+                  "description": "是否返回完整的字符信息"
+              },
+              "isExcel": {
+                  "type": "boolean",
+                  "description": "是否指定输出excel文件"
+              },
+              "isStraighten": {
+                  "type": "boolean",
+                  "description": "是否打开坐标系选项"
+              },
+              "outputOrder": {
+                  "type": "string",
+                  "description": "输出格式"
+              },
+              "startPage": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "pdf文档起始页"
+              },
+              "suffix": {
+                  "type": "string",
+                  "description": "文件后缀名"
+              },
+              "tableTypeHint": {
+                  "type": "string",
+                  "description": "提示当前样本的表格类型"
+              }
+          },
+          "title": "TextOcrFileReq"
+      },
+      "TextResult": {
+          "type": "object",
+          "properties": {
+              "angle": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "图像角度"
+              },
+              "excel": {
+                  "type": "string",
+                  "description": "excel文件以base64格式输出。仅当 url 参数 excel=1 的时候会输出该字段"
+              },
+              "height": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "输入图像的高度"
+              },
+              "tables": {
+                  "type": "array",
+                  "description": "表格数组",
+                  "items": {
+                      "originalRef": "TextTable",
+                      "$ref": "#/definitions/TextTable"
+                  }
+              },
+              "width": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "输入图像的宽度"
+              }
+          },
+          "title": "TextResult"
+      },
+      "TextTable": {
+          "type": "object",
+          "properties": {
+              "area_index": {
+                  "type": "array",
+                  "description": "区域编号，与areas一致。",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              },
+              "area_type": {
+                  "type": "array",
+                  "description": "区域类型，与areas一致。",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              },
+              "height_of_rows": {
+                  "type": "array",
+                  "description": "表格正向放置时每行的高度，与图像旋转角无关，单位是像素(px)",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              },
+              "lines": {
+                  "type": "array",
+                  "description": "表格线段数组",
+                  "items": {
+                      "originalRef": "TextLine",
+                      "$ref": "#/definitions/TextLine"
+                  }
+              },
+              "position": {
+                  "type": "array",
+                  "description": "以长度为8的整形数组表示四边形， 语义左上角为起始点顺时针构成闭合区域。",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              },
+              "table_cells": {
+                  "type": "array",
+                  "description": "单元格数组，当前区域类型为有线表格或者无线表格时返回本字段。",
+                  "items": {
+                      "originalRef": "TextTableCell",
+                      "$ref": "#/definitions/TextTableCell"
+                  }
+              },
+              "table_cols": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "表格列数"
+              },
+              "table_lines": {
+                  "type": "array",
+                  "description": "表格线段数组",
+                  "items": {
+                      "originalRef": "TextTableLine",
+                      "$ref": "#/definitions/TextTableLine"
+                  }
+              },
+              "table_rows": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "表格行数"
+              },
+              "type": {
+                  "type": "string",
+                  "description": "表格类型"
+              },
+              "width_of_cols": {
+                  "type": "array",
+                  "description": "表格正向放置时每列的宽度，与图像旋转角无关",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              }
+          },
+          "title": "TextTable"
+      },
+      "TextTableCell": {
+          "type": "object",
+          "properties": {
+              "border": {
+                  "description": "单元格的框线",
+                  "originalRef": "TextBorder",
+                  "$ref": "#/definitions/TextBorder"
+              },
+              "end_col": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "单元格的结束列"
+              },
+              "end_row": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "单元格的结束行"
+              },
+              "lines": {
+                  "type": "array",
+                  "description": "单元格内的文本行，会存在一个或者多个",
+                  "items": {
+                      "originalRef": "TextLine",
+                      "$ref": "#/definitions/TextLine"
+                  }
+              },
+              "position": {
+                  "type": "array",
+                  "description": "单元格的位置信息， 以长度为8的整形数组表示四边形， 语义左上角为起始点顺时针构成闭合区域",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              },
+              "start_col": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "单元格的起始列"
+              },
+              "start_row": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "单元格的起始行"
+              },
+              "text": {
+                  "type": "string",
+                  "description": "单元格内所有识别结果的合并字符串"
+              }
+          },
+          "title": "TextTableCell"
+      },
+      "TextTableLine": {
+          "type": "object",
+          "properties": {
+              "direction": {
+                  "type": "string",
+                  "description": "横向和纵向"
+              },
+              "position": {
+                  "type": "array",
+                  "description": "线段起始终止端点坐标以及其类型。",
+                  "items": {
+                      "type": "string"
+                  }
+              }
+          },
+          "title": "TextTableLine"
+      },
+      "UploadTangoRsp": {
+          "type": "object",
+          "properties": {
+              "accessUrl": {
+                  "type": "string",
+                  "description": "访问URL，非http开头时，前端需要拼接路由前缀以访问当前域后端接口"
+              },
+              "fileName": {
+                  "type": "string",
+                  "description": "文件名"
+              },
+              "origFileName": {
+                  "type": "string",
+                  "description": "原文件名"
+              },
+              "ouid": {
+                  "type": "string",
+                  "description": "Tango文件唯一标识"
+              }
+          },
+          "title": "UploadTangoRsp"
+      },
+      "UserAssistantReq": {
+          "type": "object",
+          "required": [
+              "agentId"
+          ],
+          "properties": {
+              "agentId": {
+                  "type": "integer",
+                  "format": "int64",
+                  "description": "agentID"
+              }
+          },
+          "title": "UserAssistantReq"
+      },
+      "UserInvoiceCheckReq": {
+          "type": "object",
+          "properties": {
+              "fid": {
+                  "type": "string"
+              },
+              "userCode": {
+                  "type": "string"
+              }
+          },
+          "title": "UserInvoiceCheckReq"
+      },
+      "UserInvoiceLockReq": {
+          "type": "object",
+          "properties": {
+              "fids": {
+                  "type": "array",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "userCode": {
+                  "type": "string"
+              }
+          },
+          "title": "UserInvoiceLockReq"
+      },
+      "UserInvoiceOcrReq": {
+          "type": "object",
+          "properties": {
+              "fileContent": {
+                  "type": "string"
+              },
+              "userCode": {
+                  "type": "string"
+              }
+          },
+          "title": "UserInvoiceOcrReq"
+      },
+      "UserInvoiceQuery": {
+          "type": "object",
+          "properties": {
+              "fids": {
+                  "type": "array",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "pageNum": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "pageSize": {
+                  "type": "integer",
+                  "format": "int32"
+              },
+              "types": {
+                  "type": "array",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              },
+              "userCode": {
+                  "type": "string"
+              },
+              "valids": {
+                  "type": "array",
+                  "items": {
+                      "type": "integer",
+                      "format": "int32"
+                  }
+              }
+          },
+          "title": "UserInvoiceQuery"
+      },
+      "UserInvoiceReleaseReq": {
+          "type": "object",
+          "properties": {
+              "fids": {
+                  "type": "array",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "userCode": {
+                  "type": "string"
+              }
+          },
+          "title": "UserInvoiceReleaseReq"
+      },
+      "agent表": {
+          "type": "object",
+          "required": [
+              "category",
+              "clientId",
+              "groupCode",
+              "id",
+              "isAllowUpload",
+              "name",
+              "prologue",
+              "robotId",
+              "sort",
+              "status"
+          ],
+          "properties": {
+              "avatar": {
+                  "type": "string",
+                  "description": "头像图标，最大长度200"
+              },
+              "bigCard": {
+                  "type": "string",
+                  "description": "大标题，最大长度200"
+              },
+              "category": {
+                  "type": "string",
+                  "description": "分类,分组>分类，最大长度64"
+              },
+              "clientId": {
+                  "type": "string",
+                  "description": "客户端id,不相关值为0"
+              },
+              "createTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "创建时间"
+              },
+              "cueWordContent": {
+                  "type": "string",
+                  "description": "提示词内容，最大长度2000"
+              },
+              "fileSize": {
+                  "type": "string",
+                  "description": "上传文件大小,单位KB"
+              },
+              "fileSuffix": {
+                  "type": "string",
+                  "description": "文件后缀类型 txt pdf docx xlsx等，最大长度64"
+              },
+              "groupCode": {
+                  "type": "string",
+                  "description": "分组,分组>分类，最大长度64"
+              },
+              "id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "description": "主键,即agentId"
+              },
+              "isAllowUpload": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "是否允许上传文件 1允许 0不允许"
+              },
+              "name": {
+                  "type": "string",
+                  "description": "agent名称，最大长度64"
+              },
+              "params": {
+                  "type": "object"
+              },
+              "profilePictureFileId": {
+                  "type": "string",
+                  "description": "大头照或者背景图对应的fileId，最大长度200"
+              },
+              "profilePictureUrl": {
+                  "type": "string",
+                  "description": "大头照,背景图，最大长度200"
+              },
+              "prologue": {
+                  "type": "string",
+                  "description": "开场白，最大长度200"
+              },
+              "promptRecommend": {
+                  "type": "array",
+                  "description": "提示词建议-json数据，最大长度500",
+                  "items": {
+                      "type": "string"
+                  }
+              },
+              "robotAppId": {
+                  "type": "string",
+                  "description": "机器人应用ID，对应FastGPT应用ID"
+              },
+              "robotId": {
+                  "type": "string",
+                  "description": "机器人id"
+              },
+              "smallCard": {
+                  "type": "string",
+                  "description": "小标题，最大长度200"
+              },
+              "sort": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "排序"
+              },
+              "status": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "状态,是否发布:1发布 0下架"
+              },
+              "summary": {
+                  "type": "string",
+                  "description": "agent简介，最大长度500"
+              },
+              "updateTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "更新时间"
+              }
+          },
+          "title": "agent表"
+      },
+      "名片识别内容": {
+          "type": "object",
+          "properties": {
+              "card": {
+                  "originalRef": "Card",
+                  "$ref": "#/definitions/Card"
+              },
+              "resultImg": {
+                  "type": "string",
+                  "description": "请求参数returnResultImg=true时有值，返回结果图片为base64编码的图片，被识别的文本块被打框"
+              },
+              "textBlocks": {
+                  "type": "array",
+                  "description": "已识别的文本块信息列表",
+                  "items": {
+                      "originalRef": "TextBlock",
+                      "$ref": "#/definitions/TextBlock"
+                  }
+              }
+          },
+          "title": "名片识别内容"
+      },
+      "对话日志表": {
+          "type": "object",
+          "required": [
+              "agentId",
+              "chatId",
+              "clientId",
+              "costTime",
+              "costTokens",
+              "createTime",
+              "id",
+              "nickName",
+              "robotId",
+              "status",
+              "userId"
+          ],
+          "properties": {
+              "agentId": {
+                  "type": "string",
+                  "description": "agent-id"
+              },
+              "chatId": {
+                  "type": "string",
+                  "description": "对话id(fastgpt的chat_id)，最大长度64"
+              },
+              "clientId": {
+                  "type": "string",
+                  "description": "客户端id,不相关值为0"
+              },
+              "costTime": {
+                  "type": "string",
+                  "description": "耗时(秒)"
+              },
+              "costTokens": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "消耗tokens"
+              },
+              "createTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "创建时间"
+              },
+              "id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "description": "主键"
+              },
+              "nickName": {
+                  "type": "string",
+                  "description": "用户名，最大长度64"
+              },
+              "params": {
+                  "type": "object"
+              },
+              "reqContent": {
+                  "type": "string",
+                  "description": "输入参数，最大长度65535"
+              },
+              "respContent": {
+                  "type": "string",
+                  "description": "输出参数，最大长度65535"
+              },
+              "robotId": {
+                  "type": "string",
+                  "description": "机器人id"
+              },
+              "status": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "请求状态 1：正常 0：异常"
+              },
+              "userId": {
+                  "type": "string",
+                  "description": "用户id，最大长度100"
+              }
+          },
+          "title": "对话日志表"
+      },
+      "智能机器人表": {
+          "type": "object",
+          "required": [
+              "createTime",
+              "id",
+              "maxConcurrency",
+              "robotAppId",
+              "robotAppSecret",
+              "robotAppServerHost",
+              "robotAppServerProvider",
+              "robotName"
+          ],
+          "properties": {
+              "createTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "创建时间"
+              },
+              "id": {
+                  "type": "integer",
+                  "format": "int64",
+                  "description": "主键"
+              },
+              "maxConcurrency": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "最高并发数"
+              },
+              "params": {
+                  "type": "object"
+              },
+              "robotAppId": {
+                  "type": "string",
+                  "description": "机器人应用ID，对应FastGPT应用ID，最大长度64"
+              },
+              "robotAppSecret": {
+                  "type": "string",
+                  "description": "机器人访问授权码，最大长度200"
+              },
+              "robotAppServerHost": {
+                  "type": "string",
+                  "description": "机器人应用服务主机地址，最大长度64"
+              },
+              "robotAppServerProvider": {
+                  "type": "string",
+                  "description": "机器人应用服务provider名，最大长度64"
+              },
+              "robotName": {
+                  "type": "string",
+                  "description": "机器人名称，最大长度100"
+              },
+              "updateTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "更新时间"
+              }
+          },
+          "title": "智能机器人表"
+      },
+      "聊天对话表": {
+          "type": "object",
+          "required": [
+              "agentId",
+              "chatId",
+              "chatType",
+              "clientId",
+              "createTime",
+              "nickName",
+              "robotAppId",
+              "robotId",
+              "title",
+              "userId"
+          ],
+          "properties": {
+              "agentId": {
+                  "type": "string",
+                  "description": "agent-id"
+              },
+              "chatId": {
+                  "type": "string",
+                  "description": "对话id(fastgpt的chat_id)，最大长度64"
+              },
+              "chatType": {
+                  "type": "string",
+                  "description": "1-纯文本聊天，2-文件上传聊天，最大长度10"
+              },
+              "clientId": {
+                  "type": "string",
+                  "description": "客户端id,不相关值为0"
+              },
+              "createTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "创建时间"
+              },
+              "customTitle": {
+                  "type": "string",
+                  "description": "用户自定义标题，最大长度100"
+              },
+              "isDelete": {
+                  "type": "boolean",
+                  "description": "逻辑删除 0：使用 1：删除"
+              },
+              "isTop": {
+                  "type": "boolean",
+                  "description": "是否置顶 0：否 1：是"
+              },
+              "nickName": {
+                  "type": "string",
+                  "description": "用户名，最大长度64"
+              },
+              "params": {
+                  "type": "object"
+              },
+              "robotAppId": {
+                  "type": "string",
+                  "description": "机器人应用ID，对应FastGPT应用ID"
+              },
+              "robotId": {
+                  "type": "string",
+                  "description": "机器人id"
+              },
+              "title": {
+                  "type": "string",
+                  "description": "对话标题:聊天最后一个问题或者上传文件名，最大长度100"
+              },
+              "updateTime": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "更新时间"
+              },
+              "userId": {
+                  "type": "string",
+                  "description": "用户id，最大长度100"
+              }
+          },
+          "title": "聊天对话表"
+      }
+  }
+}

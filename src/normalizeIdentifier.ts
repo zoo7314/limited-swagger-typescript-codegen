@@ -1,11 +1,11 @@
-import { includesCN, normalizeCN, pascalCase, regIdentifierOddChars } from "./utils"
+import { includesCN, normalizeCN } from "./normalizeCN"
+import {  pascalCase, regIdentifierOddChars } from "./utils"
 
 export function normalizeIdentifier(str: string) {
   str = cleanIdentifierOddness(str)
   str = pascalCase(str)
   return str
 }
-
 
 export function cleanIdentifierOddness(str: string) {
   str = str.replace(regIdentifierOddChars, '')

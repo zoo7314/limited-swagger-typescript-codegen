@@ -1,6 +1,8 @@
 export type {{identifier}} = {
   {{#each properties}}
+  {{#if this.description}}
   /** {{this.description}} */
-  {{this.identifier}}{{#unless this.required}}?{{/unless}}: {{this.type}};
+  {{/if}}
+  {{this.identifier}}{{#unless this.required}}?{{/unless}}: {{this.type.value}};
   {{/each}}
 }

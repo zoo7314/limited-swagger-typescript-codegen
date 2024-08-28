@@ -1,15 +1,17 @@
 import { emptyDir, ensureDir, outputFile } from "fs-extra"
 import { resolve } from "path"
-import * as objects from './objects'
-import { SchemaFileModel, ServiceFileModel } from "./types"
 import templates from "./templates"
 import Handlebars from "handlebars"
+import { ParseResult } from "./entities/ParseResult"
+import { SchemaOutputModel } from "./entities/SchemaOutputModel"
+import { ServiceOutputModel } from "./entities/ServiceOutputModel"
+import { MainOutputModel } from "./entities/MainOutputModel"
 
 
 
 
 export async function output({
-  result = objects.parseResult(),
+  result = ParseResult.create(),
   dest = '',
 }) {
   const {
@@ -47,15 +49,18 @@ function registerTemplates(): void {
 
 
 async function outputSchemas({
-  schemas = Array<SchemaFileModel>(0),
+  schemas = Array<SchemaOutputModel>(0),
   dest = '',
 }) {
   const dirPath = resolve(dest, './schemas')
   await ensureDir(dirPath)
   await emptyDir(dirPath)
   for (const item of schemas) {
-    const content = Handlebars
-      .compile(templates.schema, { noEscape: true })(item)
+    const template = Handlebars
+      .compile(templates.schema, { noEscape: true, })
+    const content = template(item, {
+      allowProtoPropertiesByDefault: true,
+    })
     await outputFile(
       resolve(dirPath, `./${item.schema.identifier}.ts`),
       content,
@@ -64,15 +69,18 @@ async function outputSchemas({
 }
 
 async function outputServices({
-    services = Array<ServiceFileModel>(0),
+    services = Array<ServiceOutputModel>(0),
     dest = '',
   }) {
   const dirPath = resolve(dest, './services')
   await ensureDir(dirPath)
   await emptyDir(dirPath)
   for (const item of services) {
-    const content = Handlebars
-      .compile(templates.service, { noEscape: true })(item)
+    const template = Handlebars
+      .compile(templates.service, { noEscape: true, })
+    const content = template(item, {
+      allowProtoPropertiesByDefault: true,
+    })
     await outputFile(
       resolve(dirPath, `./${item.name}.ts`),
       content
@@ -81,12 +89,15 @@ async function outputServices({
 }
 
 async function outputMainFile({
-    main = objects.mainFileModel(),
+    main = MainOutputModel.create(),
     dest = '',
   }) {
   const dirPath = resolve(dest)
-  const content = Handlebars
-    .compile(templates.main, { noEscape: true })(main)
+  const template = Handlebars
+    .compile(templates.main, { noEscape: true, })
+  const content = template(main, {
+    allowProtoPropertiesByDefault: true,
+  })
   await outputFile(
     resolve(dirPath, './index.ts'),
     content
@@ -94,7 +105,7 @@ async function outputMainFile({
 }
 
 async function cleanup({
-    dest = '',
+  dest = '',
 }) {
   await ensureDir(dest)
   await emptyDir(dest)
